@@ -60,7 +60,6 @@ local library = {
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/drillygzzly/Other/main/1414'))();
---local spring = loadstring(_HttpGet(game, "https://raw.githubusercontent.com/Quenty/NevermoreEngine/5a429e871d54646ba54011c18321e77afa76d657/Modules/Shared/Physics/Spring.lua"))()
     open = false;
     opening = false;
     hasInit = false;
@@ -2957,7 +2956,7 @@ function library:init()
                         order = #self.options+1;
                         value = 0;
                         min = 0;
-                        max = 1000000000000000;
+                        max = 100;
                         increment = 1;
                         callback = function() end;
                         enabled = true;
@@ -4788,8 +4787,8 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddToggle({text = 'Watermark', flag = 'watermark_enabled', state = true,});
 
-    mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 40.4, max = 100, increment = .1, value = 6});
-    mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 97.5, max = 100, increment = .1, value = 1});
+    mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 6});
+    mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1, value = 1});
 
     mainSection:AddToggle({text = 'Keybinds', flag = 'keybind_indicator', state = true, callback = function(bool)
         library.keyIndicator:SetEnabled(bool);
@@ -4841,4 +4840,3 @@ end
 
 getgenv().library = library
 return library
---haha fuck you :3
